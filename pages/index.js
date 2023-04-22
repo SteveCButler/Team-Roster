@@ -1,11 +1,9 @@
-import { useAuth } from '../utils/context/authContext';
+import Team from './team';
 
 function Home() {
-  const { user } = useAuth();
-
   return (
     <>
-      <h2>Welcome {user.displayName}</h2>
+      <Team />
     </>
   );
 }
