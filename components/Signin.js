@@ -9,13 +9,13 @@ function Signin() {
       style={{
         height: '90vh',
         padding: '30px',
-        maxWidth: '400px',
+        maxWidth: '600px',
         margin: '0 auto',
       }}
     >
-      <h1>Hi there!</h1>
+      <h1 className="text-white-50 mb-4">Welcome to Bandmates</h1>
       <p>Click the button below to login!</p>
-      <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
+      <Button type="button" size="lg" variant="dark" onClick={signIn}>
         Sign In
       </Button>
     </div>
