@@ -22,3 +22,6 @@ a {
 body {
   background-color: #787a7a;
 }
+.selected {
+  border: 2px solid blue;
+}

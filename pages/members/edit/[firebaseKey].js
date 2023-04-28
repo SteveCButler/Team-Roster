@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { getSingleMember } from '../../../api/memberData';
 import MemberForm from '../../../components/MemberForm';
 
-export default function EditAuthor() {
+export default function EditMember() {
   const [editMember, setEditMember] = useState({});
 
   const router = useRouter();

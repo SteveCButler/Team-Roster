@@ -1,14 +1,13 @@
-import axios from 'axios';
 import { clientCredentials } from '../utils/client';
-// API CALLS FOR BOOKS
 
 const dbUrl = clientCredentials.databaseURL;
 // GET ALL MEMBERS
 const getMembers = (uid) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/members.json?orderBy="uid"&equalTo="${uid}"`)
-    .then((response) => {
-      if (response.data) {
-        resolve(Object.values(response.data));
+  fetch(`${dbUrl}/members.json?orderBy="uid"&equalTo="${uid}"`)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
       } else {
         resolve([]);
       }
