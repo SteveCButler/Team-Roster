@@ -38,7 +38,7 @@ const MemberCard = ({ obj, onUpdate }) => {
         <Card.Text className="h6"><span className="text-decoration-underline">Instrument</span> <br /> {obj.role}</Card.Text>
         <Card.Text className="h6"><span className="text-decoration-underline">Genre</span> <br /> {obj.genre}</Card.Text>
       </Card.Body>
-      <Card.Footer>
+      <Card.Footer className="text-center">
         {/* DYNAMIC LINK TO VIEW THE MEMBER INFO  */}
         <Link href={`/members/${obj.firebaseKey}`} passHref>
           <Button variant="secondary" className="m-2 btn-sm">Info</Button>

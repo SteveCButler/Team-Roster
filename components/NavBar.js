@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 import {
   Navbar, Container, Nav, Button,
 } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
 
-export default function NavBar() {
+export default function NavBar({ query, setQuery }) {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -20,12 +21,18 @@ export default function NavBar() {
             <Link passHref href="/">
               <Nav.Link>Home</Nav.Link>
             </Link>
+            <Link passHref href="/">
+              <Nav.Link>Home</Nav.Link>
+            </Link>
             <Link passHref href="/musicians">
               <Nav.Link>Musicians</Nav.Link>
             </Link>
             <Link passHref href="/members/new">
               <Nav.Link>New</Nav.Link>
             </Link>
+            <div>
+              <input type="seach" className="ps-2 pt-2 rounded-2" value={query} placeholder="search" onChange={(e) => setQuery(e.target.value)} />
+            </div>
             <div className="ms-5 ">
               <Button variant="secondary" onClick={signOut}>Sign Out</Button>
             </div>
@@ -35,3 +42,14 @@ export default function NavBar() {
     </Navbar>
   );
 }
+
+NavBar.propTypes = {
+  query: PropTypes.string,
+  setQuery: PropTypes.func,
+
+};
+
+NavBar.defaultProps = {
+  query: '',
+  setQuery: '',
+};

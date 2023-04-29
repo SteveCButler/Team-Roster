@@ -12,6 +12,9 @@ import guitar from '../assets/guitar.jpg';
 import bass from '../assets/bass.jpg';
 import keys from '../assets/keys.jpg';
 import mic from '../assets/mic.jpg';
+import mando from '../assets/mando2.jpg';
+import banjo from '../assets/banjo.jpg';
+import fiddle from '../assets/fiddle.jpg';
 import noImage from '../assets/noImage.png';
 
 const initialState = {
@@ -21,7 +24,7 @@ const initialState = {
   genre: '',
   description: '',
 };
-const avatars = [guitar, bass, keys, mic];
+const avatars = [guitar, bass, keys, mic, mando, banjo, fiddle];
 function MemberForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
   const [selectedAvatar, setSelectedAvatar] = useState(noImage);
@@ -66,7 +69,7 @@ function MemberForm({ obj }) {
 
         {/* First Name INPUT  */}
         <Form.Group className="mb-3" controlId="formName">
-          <Form.Label>Name</Form.Label>
+          <Form.Label className="fs-3">Name</Form.Label>
           <Form.Control
             type="text"
             value={formInput.name}
@@ -79,15 +82,7 @@ function MemberForm({ obj }) {
 
         {/* Role  */}
         <Form.Group className="mb-3" controlId="formRole">
-          <Form.Label>Intrument</Form.Label>
-          {/* <Form.Control
-            type="text"
-            placeholder="Main Instrument"
-            value={formInput.role}
-            name="role"
-            onChange={handleChange}
-            required
-          /> */}
+          <Form.Label className="fs-3">Intrument</Form.Label>
           <Form.Select name="role" value={formInput.role} onChange={handleChange} className="mb-2" aria-label="Default select example">
             <option value="Electric Guitar">Electric Guitar</option>
             <option value="Acoustic Guitar">Acoustic Guitar</option>
@@ -100,7 +95,7 @@ function MemberForm({ obj }) {
             <option value="Fiddle">Fiddle</option>
           </Form.Select>
         </Form.Group>
-        <Form.Label>Genre</Form.Label>
+        <Form.Label className="fs-3">Genre</Form.Label>
         <Form.Select name="genre" value={formInput.genre} onChange={handleChange} className="mb-2" aria-label="Default select example">
           <option value="Rock">Rock</option>
           <option value="Blues">Blues</option>
@@ -111,17 +106,16 @@ function MemberForm({ obj }) {
           <option value="Jazz">Jazz</option>
         </Form.Select>
 
-        <Form.Label>Select Your Avatar</Form.Label>
-        <br />
+        <Form.Label className="fs-3 me-4">Select Your Avatar</Form.Label>
         {avatars.map((avatar) => (
           <Image
             key={v4()}
             src={avatar}
             alt="Avatar"
-            width="50px"
-            height="50px"
+            width="60px"
+            height="60px"
             onClick={() => selectAvatar(avatar)}
-            className={selectedAvatar === avatar ? 'selected' : 'm-2'}
+            className={selectedAvatar === avatar ? 'selected rounded-2' : 'm-2 rounded-2'}
           />
         ))}
 
@@ -131,7 +125,7 @@ function MemberForm({ obj }) {
             type="hidden"
             placeholder="Image URL"
             name="image"
-            value={selectedAvatar.src}
+            value={selectAvatar.src}
             onChange={handleChange}
             required
           />
@@ -139,10 +133,11 @@ function MemberForm({ obj }) {
 
         {/* Description  */}
         <Form.Group className="mb-3" controlId="formRole">
-          <Form.Label>What are you looking for in a band?</Form.Label>
+          <Form.Label className="fs-3">About You</Form.Label>
+          <p>What are you looking for in a band? Looking to go pro, just jam, writing, recoring? What is your experience level?</p>
           <Form.Control
             type="text"
-            placeholder="genre, experience level, time commitment"
+            placeholder="experience level, time commitment, etc"
             value={formInput.description}
             name="description"
             onChange={handleChange}

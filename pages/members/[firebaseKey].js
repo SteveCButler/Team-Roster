@@ -15,7 +15,7 @@ const MemberInfo = () => {
 
   return (
     <div className="d-flex mt-5">
-      <Image className="rounded" src={member.image === undefined ? noImage : member.image} alt="member pic" width="200px" height="200px" />
+      <Image className="rounded" src={member.image === undefined ? noImage : member.image} alt="member pic" width="250px" height="300px" />
       <div className="center text-white ms-5">
         <h2 className="display-3 mt-5">{member.name}</h2>
         <div className="d-flex">
