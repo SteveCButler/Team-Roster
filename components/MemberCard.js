@@ -3,11 +3,6 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 import { deleteMember } from '../api/memberData';
-// import guitar from '../assets/guitar.jpg';
-// import bass from '../assets/bass.jpg';
-// import keys from '../assets/keys.jpg';
-// import mic from '../assets/mic.jpg';
-// import noImage from '../assets/noImage.png';
 
 const MemberCard = ({ obj, onUpdate }) => {
   const deleteThisMember = () => {

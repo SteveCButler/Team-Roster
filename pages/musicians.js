@@ -22,6 +22,7 @@ const Team = ({ query }) => {
 
   return (
     <>
+      <title>Musicians</title>
       <h1 className="my-3">Musicians</h1>
       <div className="d-flex gap-3 flex-wrap">
         {filteredMembers.map((member) => (

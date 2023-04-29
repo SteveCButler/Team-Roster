@@ -21,9 +21,6 @@ export default function NavBar({ query, setQuery }) {
             <Link passHref href="/">
               <Nav.Link>Home</Nav.Link>
             </Link>
-            <Link passHref href="/">
-              <Nav.Link>Home</Nav.Link>
-            </Link>
             <Link passHref href="/musicians">
               <Nav.Link>Musicians</Nav.Link>
             </Link>
@@ -31,10 +28,10 @@ export default function NavBar({ query, setQuery }) {
               <Nav.Link>New</Nav.Link>
             </Link>
             <div>
-              <input type="seach" className="ps-2 pt-2 rounded-2" value={query} placeholder="search" onChange={(e) => setQuery(e.target.value)} />
+              <input type="seach" className="ms-3 ps-2 pt-2 rounded-2" value={query} placeholder="search" onChange={(e) => setQuery(e.target.value)} />
             </div>
             <div className="ms-5 ">
-              <Button variant="secondary" onClick={signOut}>Sign Out</Button>
+              <Button variant="secondary" className="btn-sm mt-1 " onClick={signOut}>Sign Out</Button>
             </div>
           </Nav>
         </Navbar.Collapse>

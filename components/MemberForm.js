@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { v4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import { useAuth } from '../utils/context/authContext';
 import { createMember, updateMember } from '../api/memberData';
 import guitar from '../assets/guitar.jpg';
@@ -109,8 +109,9 @@ function MemberForm({ obj }) {
         <Form.Label className="fs-3 me-4">Select Your Avatar</Form.Label>
         {avatars.map((avatar) => (
           <Image
-            key={v4()}
+            key={uuidv4()}
             src={avatar}
+            value={selectedAvatar}
             alt="Avatar"
             width="60px"
             height="60px"
@@ -118,18 +119,6 @@ function MemberForm({ obj }) {
             className={selectedAvatar === avatar ? 'selected rounded-2' : 'm-2 rounded-2'}
           />
         ))}
-
-        {/* Image INPUT  */}
-        <Form.Group controlId="formImage" className="mb-3">
-          <Form.Control
-            type="hidden"
-            placeholder="Image URL"
-            name="image"
-            value={selectAvatar.src}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group>
 
         {/* Description  */}
         <Form.Group className="mb-3" controlId="formRole">
