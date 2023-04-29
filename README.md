@@ -1,80 +1,28 @@
-# React/Next.js Template
+# Bandmates (aka Team Roster project)
+Bandmates is a place for musicians to connect.  The idea is like the old school bulletin boards in music stores where people would post messages like "guitarist looking for bass player and drummer for rock trio".  Bandmates allows users to post information on what instrument, genre, and other information like their experience level or commitment level (looking to go pro, looking to jam, ...).
 
-[See Live Demo of this Template](https://drt-next-js-template.netlify.app/)
-
-## [Team Roster Instructions](./INSTRUCTIONS.md)
-
-## Topics
-- [Get Started](#get-started)
-- [Starting the Project](#starting-the-project)
-- [Using axios](#using-axios)
-- [Deploying on Netlify](#deploying-on-netlify)
-___
-## Getting Started
-### Use Template
-#### 1. To get started, click the GREEN "Use this Template" button at the top of the repo
-<img width="915" alt="Screen Shot 2022-07-06 at 12 54 01 PM" src="https://user-images.githubusercontent.com/29741570/177612998-4aac9237-5a1e-4f13-8ae0-468587521564.png">
-
-#### 2. Make sure YOUR github account is selected in the dropdown and name your project
-<img width="763" alt="Screen Shot 2022-07-06 at 12 54 48 PM" src="https://user-images.githubusercontent.com/29741570/177613126-dd38f678-7553-4f27-8a4a-75680f14d71e.png">
-
-#### 3. Clone your new repo to your local machine
-#### 4. Go to the **NEXT** section
-
-## Starting the Project
-1. Create a Firebase project and set up authentication. Use [these videos](https://vimeo.com/showcase/codetracker-firebase) as a refresher if needed.
-1. Create a `.env` file at the root of the project
-1. Copy/Paste the contents of the `.env.sample` file to your newly created `.env` file.
-1. Copy over all of your Firebase values into the `.env` file.
-1. Open the `package.json` file and change the `name` property to the name of your application, and `author` to  your name.
-1. From your command line, be in the root directory and run `npm install` OR `npm i` for short.
-1. Next, run `npm run prepare`. This command sets up husky to track eslint errors on commit that will make your deploy fail on Netlify.
-1. To start your application, run `npm run dev`. THIS IS THE COMMAND YOU WILL USE TO RUN YOUR DEVELOPMENT SERVER FROM NOW ON.
-1. Open [http://localhost:3000](http://localhost:3000) with your browser.
-
-### If you see this, you are set to go!
-<img width="450" alt="Screen Shot 2022-07-06 at 1 07 27 PM" src="https://user-images.githubusercontent.com/29741570/177615077-9b6a75bc-0260-4d29-bb88-bd95a3140687.png">
+![image](https://user-images.githubusercontent.com/121408336/235316177-cbe04352-109f-43b2-9fd1-c750762c4ea3.png)
 
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-**NOTES:** 
-- If you see the following error, you did not follow all the setup steps correctly and failed to add your Firebase creds. Go back and do that NOW.
+## About the User <!-- This is a scaled down user persona -->
+- The ideal user for this application is a musician
+- Making music with others is way more fun that sitting alone 
+- The problem this app solves is that it is often hard to find other musicians to get together and make music with.  Finding people that play the genre(s) of music you like, live close, have the same mindset ("I just want to jam", "I want to be a rockstar", "I want to write original music") can be hard, that's where Bandmates comes in.
 
-<img width="1043" alt="Screen Shot 2022-07-06 at 11 18 45 AM" src="https://user-images.githubusercontent.com/29741570/177612501-c2628f18-4bbd-4de9-aae6-27ffba1172d6.png">
+## Features <!-- List your app features using bullets! Do NOT use a paragraph. No one will read that! -->
+- When logging in a user lands on the home screen that tells a bit about what Bandmates is and how to use it
+- From there a user can view the list of member musicians on the Musicians page and view info about each musician
+![image](https://user-images.githubusercontent.com/121408336/235316571-ab40103e-c488-4208-a8eb-e4ce88b2f5e3.png)
 
-### Using Axios
-> For every file you will need to make an XHR request in, you will need to require Axios
-```js
-import axios from 'axios';
+![image](https://user-images.githubusercontent.com/121408336/235316613-f26704b5-976b-4666-8734-ecb3e28d0039.png)
 
-const examplePromise = () => {
-  axios.get('http://localhost:3001/example')
-    .then((data) => {
-      console.warn(data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-});
-```
 
-### Deploying on Netlify
-Netlify will automatically detect your project and prepopulate the settings, but should something go wrong and it does not, here are the commands:
+- Uses can also become a member by submitting the New form
+![image](https://user-images.githubusercontent.com/121408336/235316594-b35d231f-3e58-4eed-9ced-f0a66aaa8ce6.png)
 
-- Build Command: `npm run build`
-- Publish directory: `.next`
+- Additional features (as time permits) may include creating bands, community forum, music sharing
 
-#### Additional Steps to Take on Netlify
-- Add Environmental Variables
-    - Any Enviromental variables you are using in your `.env` file should be added to Netlify. 
-        - Go to Site settings > Build & deploy > Environment > Environment variables and the keys and values there.
 
-- Update Firebase URL Settings
-    - In Firebase under Authentication select sign in methods, scroll to Authorized domains. Add your Netlify URL.
-        
-## Learn More about Next.js
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
